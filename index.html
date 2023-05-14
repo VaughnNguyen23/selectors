@@ -16,7 +16,26 @@
 li.my-list{
     background-color:orange;
 }
-    
+
+div#new-div,li.new-list {
+    background-color:blue;
+}
+
+ul.my-kids > li {
+    background-color:green;
+} 
+
+div.grandkids li{
+    background-color:red;
+} 
+
+.add-border{
+  border:1px solid #000;
+}
+
+.add-background{
+  background-color: gold;
+}
   </style>
 </head>
 
@@ -30,6 +49,9 @@ li.my-list{
         <li><a href="#id">id</a></li>
         <li><a href="#class">class</a></li>
         <li><a href="#compound">compound</a></li>
+        <li><a href="#child">child</a></li>
+        <li><a href="#descendant">descendant</a></li>
+        <li><a href="#multiple">multiple classes</a></li>
       </ul>
     </nav>
   </header>
@@ -57,15 +79,12 @@ li.my-list{
     <p>Here's how we hook an class attribute to an element:</p>
     <pre><code>class="my-list"</code></pre>
     <p>Here's how the CSS is applied to the element:</p>
-    <pre><code>li.my-list{
-    background-color: yellow;
-
+    <pre><code>
 li.my-list{
     background-color:orange;
 }
-      
-}</code></pre>
-
+     
+</code></pre>
 
     <p>Here's what it looks like:</p>
     <div>
@@ -73,6 +92,90 @@ li.my-list{
         <li class="my-list">I'm in a li with a class named my-list</li>
         <li class="my-list">I'm in a li with a class named my-list</li>
         <li class="my-list">I'm in a li with a class named my-list</li>
+      </ul>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><a id="compound">compound</a></legend>
+    <p>a compound selector allows us to acces the next immediate elements inside the current element.</p>
+    <pre><code>div#new-div,li.new-list{
+    background-color: blue;      
+}
+</code></pre>
+
+
+    <p>Here's what it looks like:</p>
+    <div>
+      <ul class="compound">
+        <li>I'm in a li inside a ul with a class of my-kids</li>
+        <li>I'm in a li inside a ul with a class of my-kids</li>
+        <li>I'm in a li inside a ul with a class of my-kids</li>
+      </ul>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><a id="child">child</a></legend>
+    <p>a child selector allows us to acces the next immediate elements inside the current element.</p>
+    <pre><code>div#new-div,li.new-list{
+    background-color: green;      
+}
+</code></pre>
+
+
+    <p>Here's what it looks like:</p>
+    <div>
+      <ul class="my-kids">
+        <li>I'm in a li inside a ul with a class of my-kids</li>
+        <li>I'm in a li inside a ul with a class of my-kids</li>
+        <li>I'm in a li inside a ul with a class of my-kids</li>
+      </ul>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><a id="descendant">descendant</a></legend>
+    <p>Using a descendant selector we can access all elements at any depth within the current element.</p>
+    <pre><code>div.grandkids li {
+      background-color:red;
+  }</code></pre>
+
+
+    <p>Here's what it looks like:</p>
+    <div class="grandkids">
+      <ul>
+        <li>I'm in a li inside a div with a class of grandkids</li>
+        <li>I'm in a li inside a div with a class of grandkids</li>
+        <li>I'm in a li inside a div with a class of grandkids</li>
+      </ul>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend><a id="multiple">multiple classes</a></legend>
+    <p>we can apply multiple classes to an element by placing class names separated by spaces in the class attribute</p>
+
+    <p>Here's how we hook multiple classes to an element:</p>
+    <pre><code>class="add-border add-background"</code></pre>
+    <p>Here's how the CSS is applied to the element:</p>
+    <pre><code>
+      .add-border{
+        border:1px solid #000;
+      }
+
+      .add-background{
+        background-color: gold;
+      }
+     
+</code></pre>
+
+    <p>Here's what it looks like:</p>
+    <div>
+      <ul>
+        <li class="add-border add-background">I'm in a li that has two classes</li>
+        <li class="add-border add-background">I'm in a li that has two classes</li>
+        <li class="add-border add-background">I'm in a li that has two classes</li>
       </ul>
     </div>
   </fieldset>
