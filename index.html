@@ -79,11 +79,9 @@ div.grandkids li{
     <p>Here's how we hook an class attribute to an element:</p>
     <pre><code>class="my-list"</code></pre>
     <p>Here's how the CSS is applied to the element:</p>
-    <pre><code>
-li.my-list{
+    <pre><code>li.my-list{
     background-color:orange;
 }
-     
 </code></pre>
 
     <p>Here's what it looks like:</p>
@@ -99,18 +97,19 @@ li.my-list{
   <fieldset>
     <legend><a id="compound">compound</a></legend>
     <p>a compound selector allows us to acces the next immediate elements inside the current element.</p>
-    <pre><code>div#new-div,li.new-list{
-    background-color: blue;      
-}
+    <pre><code>div#new-div,li.new-list {
+    background-color:blue;
+     }
 </code></pre>
 
 
     <p>Here's what it looks like:</p>
+    <div id="new-div">I'm inside a div with an id of new-div</div>
     <div>
-      <ul class="compound">
-        <li>I'm in a li inside a ul with a class of my-kids</li>
-        <li>I'm in a li inside a ul with a class of my-kids</li>
-        <li>I'm in a li inside a ul with a class of my-kids</li>
+      <ul>
+        <li class="new-list">I'm in an li with a class named new-list</li>
+        <li class="new-list">I'm in an li with a class named new-list</li>
+        <li class="new-list">I'm in an li with a class named new-list</li>
       </ul>
     </div>
   </fieldset>
@@ -119,7 +118,7 @@ li.my-list{
     <legend><a id="child">child</a></legend>
     <p>a child selector allows us to acces the next immediate elements inside the current element.</p>
     <pre><code>div#new-div,li.new-list{
-    background-color: green;      
+    background-color: blue;      
 }
 </code></pre>
 
@@ -139,7 +138,8 @@ li.my-list{
     <p>Using a descendant selector we can access all elements at any depth within the current element.</p>
     <pre><code>div.grandkids li {
       background-color:red;
-  }</code></pre>
+  }
+</code></pre>
 
 
     <p>Here's what it looks like:</p>
@@ -159,15 +159,13 @@ li.my-list{
     <p>Here's how we hook multiple classes to an element:</p>
     <pre><code>class="add-border add-background"</code></pre>
     <p>Here's how the CSS is applied to the element:</p>
-    <pre><code>
-      .add-border{
+    <pre><code>      .add-border{
         border:1px solid #000;
       }
 
       .add-background{
         background-color: gold;
       }
-     
 </code></pre>
 
     <p>Here's what it looks like:</p>
